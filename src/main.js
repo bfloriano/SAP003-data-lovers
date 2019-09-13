@@ -9,10 +9,23 @@ POKEMONS.map(poke => {
     </div></div>`;
     img.innerHTML += `${card}`;
     // img.innerHTML += `<img src="${poke.img}">${poke.name}</br>`
-
-
-}
+    
+}  
 )
+
+
+document.getElementById("botao-ordem").addEventListener("click", ordenacao);
+
+function ordenacao() {
+    window.data.ordenar();
+};
+
+// let ordem = document.getElementById("ordem");
+// ordem.innerHTML = `teste ${ordenacao}`;
+
+
+
+
 
 
 /*
