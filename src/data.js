@@ -1,19 +1,16 @@
-// esta é uma função de exemplo
-// veja como agregamos a função ao objeto global window
-window.data = {
-  // filtrar: filtrar, 
-  ordenar: ordenar
-};
-
-function ordenar() {
-  alert("heeeeeelp");
+const filtrar = (arr, condition) => {
+  return arr.filter(item => item.type.includes(condition));
 };
 
 
-/*
+// const ordenar = () => {
+//  return alert("heeeeeelp");
+// };
 
-const example = () => {
-  return 'example';
+
+
+
+app = {
+  filtrar: filtrar, 
+  // ordenar: ordenar
 };
-
-*/
