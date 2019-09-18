@@ -27,6 +27,9 @@ section {
     border-radius: 15px;
     box-shadow: 5px 5px 5px 5px rgba(165, 38, 91, 0.801);
 }
+/* .card img {
+  width: 100%;
+} */
 
 .card-inner {
     /* position: relative; */
