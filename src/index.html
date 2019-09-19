@@ -2,36 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="root"></div>
-    <header>
-        <h1>POKEWORLD</h1>
-        <h3>O seu guia de pokemons</h3>
-    </header>
-    <main>
-      
-      <section>
-        <select name="botao-filtro" id="botao-filtro"></select>
-        <select name="botao-fraqueza" id="botao-fraqueza"></select>
-        <select name="botao-ordem" id="botao-ordem"></select>
-      </section>
-      
-      <section>
-        <div id="cartao"></div>
-      </section>
+    <div class="container">
+      <header>
+          <h1>POKEWORLD</h1>
+          <h3>O seu guia de pokemons</h3>
+        <img src="logo.png" class="img" srcset="">
+        <!-- <img src="gif.gif" class="gif"> -->
+         
+      </header>
+      <main>
+    
+        <section class="botons">
+          <select name="botao-filtro" id="botao-filtro"></select>
+          <select name="botao-fraqueza" id="botao-fraqueza"></select>
+          <select name="botao-nome" id="botao-nome"></select>
+          <select name="botao-raridade" id="botao-raridade"></select>
+        </section>
+        <aside>Curiosidades</aside>
+        <section>
+          <div id="cartao"></div>
+        </section>
+        
 
-    </main>
-    <!-- <script src="data/injuries/injuries.js"></script> -->
-    <!-- <script src="data/lol/lol.js"></script> -->
-    <!-- <script src="data/patient/patient.js"></script> -->
-    <script src="data/pokemon/pokemon.js"></script>
-    <!-- <script src="data/rickandmorty/rickandmorty.js"></script> -->
-    <!-- <script src="data/steam/steam.js"></script> -->
-    <!-- <script src="data/worldbank/worldbank.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+      </main>
+      <!-- <script src="data/injuries/injuries.js"></script> -->
+      <!-- <script src="data/lol/lol.js"></script> -->
+      <!-- <script src="data/patient/patient.js"></script> -->
+      <script src="data/pokemon/pokemon.js"></script>
+      <!-- <script src="data/rickandmorty/rickandmorty.js"></script> -->
+      <!-- <script src="data/steam/steam.js"></script> -->
+      <!-- <script src="data/worldbank/worldbank.js"></script> -->
+      <script src="data.js"></script>
+      <script src="main.js"></script>
+    </div>
   </body>
 </html>

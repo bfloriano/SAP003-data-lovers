@@ -1,31 +1,116 @@
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+/* @media (min-width: 440px) {
+  .container {
+    max-width: 440px;
+    padding: 0;
+  }
+    /* .card {
+      width: 150px;
+      height: 120px;
+  } */
+
+
+/* 1360x768 */
+
+
+
+
 header {
-    background-color: rgba(255, 230, 0, 0.774);
+    background-color: rgba(255, 0, 0, 0.795);
     font-family: Impact;
     text-align: center;
+    padding-bottom: 2%;
 }
+.img, .gif {
+  /* height: ; */
+  width: 40%;
+}
+
+.botons {
+  text-align: center;
+  
+  /* display: inline-block; */
+  /* justify-content: space-between; */
+  /* background-color: rgba(137, 43, 226, 0.308); */
+  /* lighting-color: blue; */
+    }
+
+    #botao-filtro, #botao-fraqueza, #botao-nome, #botao-raridade {
+      background-color: rgba(90, 90, 90, 0.384);
+      border-color: rgb(255, 255, 255);
+      border-radius: 15px;
+      width: 100px;
+      height: 30px;
+      color: rgb(255, 255, 255);
+      font: bolder 12pt arial;
+      margin-right: 5%;
+    }
+    /* #botao-fraqueza {
+        background-color: rgba(90, 90, 90, 0.384);
+        border-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        width: 100px;
+        height: 30px;
+        color: rgb(255, 255, 255);
+        font: bolder 12pt arial;
+        margin-right: 5%;
+      } */
+
 main {
-    background-color: rgba(155, 155, 240, 0.87);
+  padding-top: 2%;
+    background-color: rgb(0, 0, 255);
+    /* align-self: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
     
 }
 
-section {
-    /* display: flex; */
+aside {
+  text-align: center;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  background-color: rgba(173, 173, 173, 0.452);
+  border: 0.5px solid rgb(255, 255, 255);
+  /* align-content: center; */
+  /* display: inline-block; */
+  /* justify-content: flex-end; */
+  /* align-content: flex-start; */
+  /* text-align: right; */
+  
+}
+    
+
+#cartao {
+  text-align: center;
+    /* display: inline-block; */
     /* justify-content: center; */
+    /* align-content: auto; */
+    /* align-items: auto; */
 }
   
 .card {
     display: inline-block;
-    background-color: rgba(247, 245, 245, 0.74);
+    /* justify-content: center; */
+    background-color: rgba(255, 255, 255, 0.712);
     text-align: center;
     font-style: italic;
     font-weight: bold;
     width: 200px;
     height: 170px;
-    margin: 3%;
-    padding: 1%;
-    border: 2px solid rgb(255, 0, 76);
+    margin: 1%;
+    padding: 0.5%;
+    border: 2px solid rgb(255, 230, 0);
     border-radius: 15px;
-    box-shadow: 5px 5px 5px 5px rgba(165, 38, 91, 0.801);
+    box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
+    
 }
 /* .card img {
   width: 100%;
@@ -59,8 +144,9 @@ section {
   }
   
   .card-back {
-    background-color: rgba(102, 0, 0, 0.295);
+    background-color: rgba(255, 255, 255, 0.493);
     /* color: white; */
     transform: rotateY(180deg);
+    /* vertical-align: center; */
     /* border-radius: 5px; */
   }

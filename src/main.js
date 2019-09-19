@@ -26,9 +26,7 @@ function exibeCartao(arr) {
                     <img src="${poke.img}" />
                     <p class="nome">${poke.name}</p>
                 </div>
-                <div class="card-back">
-                    Teste
-                </div>
+                <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count}</div>
             </div>
         </div>`;
     })
@@ -49,7 +47,7 @@ function listaTipos(POKEMONS) {
     ))
 
 botaoFiltro.innerHTML = "";
-botaoFiltro.innerHTML = `<option value="none">Pokemons do Tipo...</option>`;
+botaoFiltro.innerHTML = `<option value="none">Tipo</option>`;
 botaoFiltro.innerHTML += filterTypes.map(type => `<option value="${type}">${type}</option>`).join("");
 }
 
@@ -75,7 +73,7 @@ function listaFraqueza(POKEMONS) {
     ))
 
 botaoFraqueza.innerHTML = "";
-botaoFraqueza.innerHTML = `<option value="none">Filtrar por fraqueza</option>`;
+botaoFraqueza.innerHTML = `<option value="none">Fraqueza</option>`;
 botaoFraqueza.innerHTML += filterWeak.map(weaknesses => `<option value="${weaknesses}">${weaknesses}</option>`).join("");
 }
 
