@@ -1,8 +1,11 @@
 const POKEMONS = POKEMON.pokemon;
 const cartao = document.getElementById("cartao");
+
+const botaoFiltro = document.getElementById("botao-filtro");
 let botaoFiltro = document.getElementById("botao-filtro");
 let botaoFraqueza = document.getElementById("botao-fraqueza");
-// let curi = document.getElementsById("curi");
+
+
 
 //executar a função ao abrir a pagina para listar as opções de filtro e os cards
 onload = () => {
@@ -88,26 +91,15 @@ function filtro() {
 }  
     
 
-//curiosidades
-// function exibeCartao(arr) {
-//     let cardzinho ="";
-//     arr.forEach(poke => {
-//         cardzinho += `
-//         <div class="card">
-//             <div class="card-inner">
-//                 <div class="card-front">
-//                     <img src="${poke.img}" />
-//                     <p class="nome">${poke.name}</p>
-//                 </div>
-//                 <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count}</div>
-//             </div>
-//         </div>`;
-//     })
-// let curios = "tesnatdo";
-//     curi.innerHTML = curios;
+
+function listaAlf (POKEMONS){
+    POKEMONS.sort()
+
+}
 
 
-// document.getElementById("botao-ordem").addEventListener("change", ordenacao);
+
+//document.getElementById("botao-ordem").addEventListener("change", ordenacao);//
 
 
 // function ordenacao() {
