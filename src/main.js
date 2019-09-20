@@ -2,7 +2,7 @@ const POKEMONS = POKEMON.pokemon;
 const cartao = document.getElementById("cartao");
 const botaoFiltro = document.getElementById("botao-filtro");
 const botaoFraqueza = document.getElementById("botao-fraqueza")
-
+const botaoOrdem = document.getElementById("botao-ordem")
 
 // passo 1 = pegar cada tipo e fazer uma lista em forma de array / criar menu filtro com a array criada anteriormente
 // passo 2 = função do filtro (data.js)
@@ -103,9 +103,13 @@ function teste() {
 }
 
 
+function listaAlf (POKEMONS){
+    POKEMONS.sort()
+
+}
 
 
-// document.getElementById("botao-ordem").addEventListener("change", ordenacao);
+//document.getElementById("botao-ordem").addEventListener("change", ordenacao);//
 
 
 // function ordenacao() {
