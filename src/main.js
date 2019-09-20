@@ -1,12 +1,11 @@
 const POKEMONS = POKEMON.pokemon;
 const cartao = document.getElementById("cartao");
-const botaoFiltro = document.getElementById("botao-filtro");
-const botaoFraqueza = document.getElementById("botao-fraqueza")
-const botaoOrdem = document.getElementById("botao-ordem")
 
-// passo 1 = pegar cada tipo e fazer uma lista em forma de array / criar menu filtro com a array criada anteriormente
-// passo 2 = função do filtro (data.js)
-// passo 3 = trem que junta TUDO e exibe certo o que eu quero
+const botaoFiltro = document.getElementById("botao-filtro");
+let botaoFiltro = document.getElementById("botao-filtro");
+let botaoFraqueza = document.getElementById("botao-fraqueza");
+
+
 
 //executar a função ao abrir a pagina para listar as opções de filtro e os cards
 onload = () => {
@@ -32,9 +31,13 @@ function exibeCartao(arr) {
     })
     cartao.innerHTML = cardzinho;
 }
-    
-//FILTRO-TIPO
+   
+// passo 1 = pegar cada tipo e fazer uma lista em forma de array / criar menu com a array criada anteriormente
+// passo 2 = função (data.js)
+// passo 3 = trem que junta TUDO e exibe certo o que eu quero
+
 // passo 1
+//FILTRO-TIPO
 function listaTipos(POKEMONS) {
     const filterTypes = []; 
     POKEMONS.map(poke => poke.type.map(type => {
@@ -50,15 +53,6 @@ botaoFiltro.innerHTML = "";
 botaoFiltro.innerHTML = `<option value="none">Tipo</option>`;
 botaoFiltro.innerHTML += filterTypes.map(type => `<option value="${type}">${type}</option>`).join("");
 }
-
-// botaoFiltro.addEventListener("change", () => {
-//     if (botaoFiltro.value == "none") {
-//         exibeCartao(POKEMONS);
-//     } else {
-//         exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value));
-//     }
-// })
-
 
 //FILTRO-FRAQUEZA
 function listaFraqueza(POKEMONS) {
@@ -77,30 +71,25 @@ botaoFraqueza.innerHTML = `<option value="none">Fraqueza</option>`;
 botaoFraqueza.innerHTML += filterWeak.map(weaknesses => `<option value="${weaknesses}">${weaknesses}</option>`).join("");
 }
 
-// botaoFraqueza.addEventListener("change", () => {
-//     if (botaoFraqueza.value == "none") {
-//         exibeCartao(POKEMONS);
-//     } else {
-//         exibeCartao(app.filtrarf(POKEMONS, botaoFraqueza.value));
-//     }
-// })
-
-
 //passo 3
-botaoFiltro.addEventListener("change", teste)
-botaoFraqueza.addEventListener("change", teste)
+botaoFiltro.addEventListener("change", filtro)
+botaoFraqueza.addEventListener("change", filtro)
 
-function teste() {
-    if (botaoFiltro.value == "none" && botaoFraqueza.value == "none") {
-        exibeCartao(POKEMONS);
-    } else if (botaoFiltro.value == "none" && botaoFraqueza.value != "none") {
-        exibeCartao(app.filtrarf(POKEMONS, botaoFraqueza.value));
-    } else if (botaoFiltro.value != "none" && botaoFraqueza.value == "none") {
-        exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value));
-    } else {
-        alert("fazer uma função que interpole os dois resultados e exiba os resultados em comum");
-    }
-}
+function filtro() {
+        if (botaoFiltro.value == "none" && botaoFraqueza.value == "none") {
+            exibeCartao(POKEMONS);
+        } else if (botaoFiltro.value == "none" && botaoFraqueza.value != "none") {
+            exibeCartao(app.filtrarf(POKEMONS, botaoFraqueza.value));
+        } else if (botaoFiltro.value != "none" && botaoFraqueza.value == "none") {
+            exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value));
+        } else if ((botaoFiltro.value != "none" && botaoFraqueza.value != "none")) {
+            alert("não é possivel utilizar dois filtros ao mesmo tempo, por favor, selecione apenas uma opção")  
+            botaoFiltro.value = "none"
+            botaoFraqueza.value = "none"
+            exibeCartao(POKEMONS);
+        }
+}  
+    
 
 
 function listaAlf (POKEMONS){
@@ -109,13 +98,11 @@ function listaAlf (POKEMONS){
 }
 
 
+
 //document.getElementById("botao-ordem").addEventListener("change", ordenacao);//
 
 
 // function ordenacao() {
 //     window.data.ordenar();
-// };
-
-
-
-
+// ;
+    
