@@ -1,7 +1,5 @@
 const POKEMONS = POKEMON.pokemon;
 const cartao = document.getElementById("cartao");
-
-const botaoFiltro = document.getElementById("botao-filtro");
 let botaoFiltro = document.getElementById("botao-filtro");
 let botaoFraqueza = document.getElementById("botao-fraqueza");
 
