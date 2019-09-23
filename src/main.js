@@ -2,7 +2,7 @@ const POKEMONS = POKEMON.pokemon;
 const cartao = document.getElementById("cartao");
 let botaoFiltro = document.getElementById("botao-filtro");
 let botaoFraqueza = document.getElementById("botao-fraqueza");
-
+let botaoOrdem = document.getElementById("botao-ordem");
 
 
 //executar a função ao abrir a pagina para listar as opções de filtro e os cards
@@ -10,6 +10,7 @@ onload = () => {
     exibeCartao(POKEMONS)
     listaTipos(POKEMONS)
     listaFraqueza(POKEMONS)
+    
 };
 
 //exibição do card
@@ -77,9 +78,9 @@ function filtro() {
         if (botaoFiltro.value == "none" && botaoFraqueza.value == "none") {
             exibeCartao(POKEMONS);
         } else if (botaoFiltro.value == "none" && botaoFraqueza.value != "none") {
-            exibeCartao(app.filtrarf(POKEMONS, botaoFraqueza.value));
+            exibeCartao(app.filtrarFraqueza(POKEMONS, botaoFraqueza.value));
         } else if (botaoFiltro.value != "none" && botaoFraqueza.value == "none") {
-            exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value));
+            exibeCartao(app.filtrarTipo(POKEMONS, botaoFiltro.value));
         } else if ((botaoFiltro.value != "none" && botaoFraqueza.value != "none")) {
             alert("não é possivel utilizar dois filtros ao mesmo tempo, por favor, selecione apenas uma opção")  
             botaoFiltro.value = "none"
@@ -88,19 +89,12 @@ function filtro() {
         }
 }  
     
+//ordenação
 
+botaoOrdem.innerHTML = `<option>Nome</option><option value="A - Z">A - Z</option><option value="Z - A"> Z - A</option>`;
+botaoOrdem.addEventListener("change", () => listaOrdenada(POKEMONS, botaoOrdem.value));
 
-function listaAlf (POKEMONS){
-    POKEMONS.sort()
-
+function listaOrdenada(arr, condition){
+    exibeCartao(app.ordemAlfabetica(arr, condition));
 }
 
-
-
-//document.getElementById("botao-ordem").addEventListener("change", ordenacao);//
-
-
-// function ordenacao() {
-//     window.data.ordenar();
-// ;
-    
