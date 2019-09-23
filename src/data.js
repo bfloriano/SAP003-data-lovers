@@ -1,30 +1,28 @@
-const filtrar = (arr, condition) => {
-  return arr.filter(item => (item.type == condition))
+const filtrarTipo = (arr, condition) => {
+  return arr.filter(item => item.type.includes(condition));
 };
 
-const filtrarf = (arr, condition) => {
+const filtrarFraqueza = (arr, condition) => {
   return arr.filter(item => item.weaknesses.includes(condition));
 };
 
-// const filtrart = (arr, condition) => {
-//   return arr.filter(item => (item.weaknesses && item.type).includes(condition));
-// };
+const ordemAlfabetica = (arr, condition) => {
+  if(condition === "A - Z"){
+      return arr.sort((a, b) => a.name > b.name ? 1: -1);
+  }
+  if(condition === "Z - A"){
+   return arr.sort((a, b) => a.name < b.name ? 1: -1);
+  }
+}
 
-
-// const x = arr.filter(item => (item.type == condition))
-// exibeCartao(x)
-
-
-// const ordenar = () => {
-//  return alert("heeeeeelp");
-// };
 
 
 
 
 app = {
-  filtrar: filtrar, 
-  filtrarf: filtrarf,
+  filtrarTipo: filtrarTipo, 
+  filtrarFraqueza: filtrarFraqueza,
+  ordemAlfabetica: ordemAlfabetica,
   // filtrart: filtrart,
-  // ordenar: ordenar
+  
 };
