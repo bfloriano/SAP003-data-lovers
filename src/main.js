@@ -80,7 +80,7 @@ botaoRaridade.addEventListener("change", raridade);
 function filtro() {
   exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value, "type"));
   if (botaoFiltro.value == "none") {
-  exibeCartao(POKEMONS);
+    exibeCartao(POKEMONS);
   }
   botaoFraqueza.value = "none";
   botaoOrdem.value = "none";
@@ -140,4 +140,3 @@ const todos = () => (exibeCartao(POKEMONS));
 
 ver.addEventListener("click", extremos);
 vertodos.addEventListener("click", todos);
-
