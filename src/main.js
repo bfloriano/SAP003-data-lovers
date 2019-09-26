@@ -1,3 +1,4 @@
+//const POKEMONS = require("./data/pokemon/pokemon.json");
 const POKEMONS = POKEMON.pokemon;
 let cartao = document.getElementById("cartao");
 let botaoFiltro = document.getElementById("botao-filtro");
@@ -12,7 +13,7 @@ let vertodos = document.getElementById("vertodos");
 onload = () => {
   exibeCartao(POKEMONS);
   listaTipos(POKEMONS);
-  listaFraqueza(POKEMONS);
+  listaFraqueza(POKEMONS);  
 };
 
 //exibição do card
@@ -26,7 +27,7 @@ function exibeCartao(arr) {
             <img src="${poke.img}" />
               <p class="nome">${poke.name}</p>
           </div>
-          <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count}  </div>
+          <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count ? poke.candy_count : "Ùltima Evolução"}</div>
         </div>
       </div>`;
   });
@@ -79,7 +80,7 @@ botaoRaridade.addEventListener("change", raridade);
 function filtro() {
   exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value, "type"));
   if (botaoFiltro.value == "none") {
-    exibeCartao(POKEMONS);
+  exibeCartao(POKEMONS);
   }
   botaoFraqueza.value = "none";
   botaoOrdem.value = "none";
@@ -139,3 +140,4 @@ const todos = () => (exibeCartao(POKEMONS));
 
 ver.addEventListener("click", extremos);
 vertodos.addEventListener("click", todos);
+
