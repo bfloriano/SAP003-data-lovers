@@ -10,7 +10,10 @@ const ordenar = (arr, condition, key) => {
   }
 };
 
+const media = (key) => (key.map((i) => Number(i.replace(/[^0-9.,]+/g, ""))).reduce((pv, item) => (pv + item))/151);
+
 app = {
   filtrar: filtrar, 
   ordenar: ordenar,
+  media: media,
 };
