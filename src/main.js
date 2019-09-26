@@ -4,6 +4,9 @@ let botaoFiltro = document.getElementById("botao-filtro");
 let botaoFraqueza = document.getElementById("botao-fraqueza");
 let botaoOrdem = document.getElementById("botao-ordem");
 let botaoRaridade = document.getElementById("botao-raridade");
+let medias = document.getElementById("medias");
+let ver = document.getElementById("ver");
+let vertodos = document.getElementById("vertodos");
 
 //executar a função ao abrir a pagina para listar as opções dos botões e os cards
 onload = () => {
@@ -106,3 +109,55 @@ function raridade () {
   botaoFraqueza.value = "none";
   botaoOrdem.value = "none";
 }
+
+//CALCULOS CURIOSIDADES
+const soNumero = (arr) => (coisa = arr.map(i => i.replace(/[^0-9.,]+/g, "")));
+
+const strXNum = (arr) => {
+  for (let b = 0; b < arr.length; b++) {
+    arr[b] = Number(arr[b]);
+  }
+  return arr;
+};
+
+//MÉDIA Altura
+const arrAltura = POKEMONS.map(poke => poke.height); //Object.values() não precisou...
+const justNum1 = soNumero(arrAltura);
+
+const mediaAltura = (strXNum(justNum1).reduce((pv, item) => {
+  return pv + item;
+}))/151;
+
+//MÉDIA Peso
+const arrPeso = POKEMONS.map(poke => poke.weight);
+const justNum2 = soNumero(arrPeso);
+
+const mediaPeso = (strXNum(justNum2).reduce((pv, item) => {
+  return pv + item;
+}))/151;
+
+//maiores e menores
+const nome = POKEMONS.map(poke => poke.name);
+
+const menorAltura = (Math.min.apply(Math, justNum1));
+const menorPoke = nome[(justNum1.indexOf(menorAltura))];
+const maiorAltura = (Math.max.apply(Math, justNum1));
+const maiorPoke = nome[(justNum1.indexOf(maiorAltura))];
+
+const menorPeso = (Math.min.apply(Math, justNum2));
+const magrinhoPoke = nome[(justNum2.indexOf(menorPeso))];
+const maiorPeso = (Math.max.apply(Math, justNum2));
+const gordinhoPoke = nome[(justNum2.indexOf(maiorPeso))];
+
+//tela de curiosidades
+medias.innerHTML = `A média de Altura de todos os pokemons é: ${mediaAltura} metros.</br>
+Sendo o menor deles é o ${menorPoke}, medindo apenas ${menorAltura} metros, e o maior é o ${maiorPoke}, medindo ${maiorAltura} metros.</br>`;
+medias.innerHTML += `A média do Peso de todos os pokemons é: ${mediaPeso} kg.</br>
+O mais leve deles é o ${magrinhoPoke}, com apenas ${menorPeso} kg, enquanto o mais pesado é o ${gordinhoPoke}, pesando exatos ${maiorPeso} kg.`;
+
+let pokesExtremos = [POKEMONS[(justNum1.indexOf(menorAltura))], POKEMONS[(justNum1.indexOf(maiorAltura))], POKEMONS[(justNum2.indexOf(menorPeso))], POKEMONS[(justNum2.indexOf(maiorPeso))]];
+const extremos = () => (exibeCartao(pokesExtremos));
+const todos = () => (exibeCartao(POKEMONS));
+
+ver.addEventListener("click", extremos);
+vertodos.addEventListener("click", todos);
