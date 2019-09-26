@@ -26,7 +26,7 @@ function exibeCartao(arr) {
             <img src="${poke.img}" />
               <p class="nome">${poke.name}</p>
           </div>
-          <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count}</div>
+          <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count}  </div>
         </div>
       </div>`;
   });
@@ -111,51 +111,29 @@ function raridade () {
 }
 
 //CALCULOS CURIOSIDADES
-const soNumero = (arr) => (coisa = arr.map(i => i.replace(/[^0-9.,]+/g, "")));
-
-const strXNum = (arr) => {
-  for (let b = 0; b < arr.length; b++) {
-    arr[b] = Number(arr[b]);
-  }
-  return arr;
-};
-
-//MÉDIA Altura
-const arrAltura = POKEMONS.map(poke => poke.height); //Object.values() não precisou...
-const justNum1 = soNumero(arrAltura);
-
-const mediaAltura = (strXNum(justNum1).reduce((pv, item) => {
-  return pv + item;
-}))/151;
-
-//MÉDIA Peso
-const arrPeso = POKEMONS.map(poke => poke.weight);
-const justNum2 = soNumero(arrPeso);
-
-const mediaPeso = (strXNum(justNum2).reduce((pv, item) => {
-  return pv + item;
-}))/151;
+const arrAltura = (POKEMONS.map(poke => poke.height)).map((i) => Number(i.replace(/[^0-9.,]+/g, "")));
+const arrPeso = (POKEMONS.map(poke => poke.weight)).map((i) => Number(i.replace(/[^0-9.,]+/g, "")));
 
 //maiores e menores
 const nome = POKEMONS.map(poke => poke.name);
 
-const menorAltura = (Math.min.apply(Math, justNum1));
-const menorPoke = nome[(justNum1.indexOf(menorAltura))];
-const maiorAltura = (Math.max.apply(Math, justNum1));
-const maiorPoke = nome[(justNum1.indexOf(maiorAltura))];
+const menorAltura = (Math.min.apply(Math, arrAltura));
+const menorPoke = nome[(arrAltura.indexOf(menorAltura))];
+const maiorAltura = (Math.max.apply(Math, arrAltura));
+const maiorPoke = nome[(arrAltura.indexOf(maiorAltura))];
 
-const menorPeso = (Math.min.apply(Math, justNum2));
-const magrinhoPoke = nome[(justNum2.indexOf(menorPeso))];
-const maiorPeso = (Math.max.apply(Math, justNum2));
-const gordinhoPoke = nome[(justNum2.indexOf(maiorPeso))];
+const menorPeso = (Math.min.apply(Math, arrPeso));
+const magrinhoPoke = nome[(arrPeso.indexOf(menorPeso))];
+const maiorPeso = (Math.max.apply(Math, arrPeso));
+const gordinhoPoke = nome[(arrPeso.indexOf(maiorPeso))];
 
 //tela de curiosidades
-medias.innerHTML = `A média de Altura de todos os pokemons é: ${mediaAltura} metros.</br>
+medias.innerHTML = `A média de Altura de todos os pokemons é: ${app.media(POKEMONS.map(poke => poke.height)).toFixed(2)} metros.</br>
 Sendo o menor deles é o ${menorPoke}, medindo apenas ${menorAltura} metros, e o maior é o ${maiorPoke}, medindo ${maiorAltura} metros.</br>`;
-medias.innerHTML += `A média do Peso de todos os pokemons é: ${mediaPeso} kg.</br>
+medias.innerHTML += `A média do Peso de todos os pokemons é: ${app.media(POKEMONS.map(poke => poke.weight)).toFixed(2)} kg.</br>
 O mais leve deles é o ${magrinhoPoke}, com apenas ${menorPeso} kg, enquanto o mais pesado é o ${gordinhoPoke}, pesando exatos ${maiorPeso} kg.`;
 
-let pokesExtremos = [POKEMONS[(justNum1.indexOf(menorAltura))], POKEMONS[(justNum1.indexOf(maiorAltura))], POKEMONS[(justNum2.indexOf(menorPeso))], POKEMONS[(justNum2.indexOf(maiorPeso))]];
+let pokesExtremos = [POKEMONS[(arrAltura.indexOf(menorAltura))], POKEMONS[(arrAltura.indexOf(maiorAltura))], POKEMONS[(arrPeso.indexOf(menorPeso))], POKEMONS[(arrPeso.indexOf(maiorPeso))]];
 const extremos = () => (exibeCartao(pokesExtremos));
 const todos = () => (exibeCartao(POKEMONS));
 
