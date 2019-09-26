@@ -5,8 +5,11 @@ let botaoFiltro = document.getElementById("botao-filtro");
 let botaoFraqueza = document.getElementById("botao-fraqueza");
 let botaoOrdem = document.getElementById("botao-ordem");
 let botaoRaridade = document.getElementById("botao-raridade");
+let medias = document.getElementById("medias");
+let ver = document.getElementById("ver");
+let vertodos = document.getElementById("vertodos");
 
-//executar a função ao abrir a pagina para listar as opções de filtro e os cards
+//executar a função ao abrir a pagina para listar as opções dos botões e os cards
 onload = () => {
   exibeCartao(POKEMONS);
   listaTipos(POKEMONS);
@@ -31,12 +34,7 @@ function exibeCartao(arr) {
   cartao.innerHTML = cardzinho;
 }
    
-// passo 1 = pegar cada tipo e fazer uma lista em forma de array / criar menu com a array criada anteriormente
-// passo 2 = função (data.js)
-// passo 3 = trem que junta TUDO e exibe certo o que eu quero
-
-// passo 1
-//FILTRO-TIPO
+//BOTÃO FILTRO-TIPO
 function listaTipos(POKEMONS) {
   const filterTypes = []; 
   POKEMONS.map(poke => poke.type.map(type => {
@@ -52,7 +50,7 @@ function listaTipos(POKEMONS) {
   botaoFiltro.innerHTML += filterTypes.map(type => `<option value="${type}">${type}</option>`).join("");
 }
 
-//FILTRO-FRAQUEZA
+//BOTÃO FILTRO-FRAQUEZA
 function listaFraqueza(POKEMONS) {
   const filterWeak = []; 
   POKEMONS.map(poke => poke.weaknesses.map(weaknesses => {
@@ -68,19 +66,21 @@ function listaFraqueza(POKEMONS) {
   botaoFraqueza.innerHTML += filterWeak.map(weaknesses => `<option value="${weaknesses}">${weaknesses}</option>`).join("");
 }
 
-botaoRaridade.innerHTML = "<option value=\"none\">Raridade</option> <option value=\"maisRaros\">Pokemons mais raros</option> <option value=\"menosRaros\">Pokemons menos raros</option>";
+//BOTÕES ORDENAR
 botaoOrdem.innerHTML = "<option value=\"none\">Nome</option> <option value=\"A - Z\">A - Z</option> <option value=\"Z - A\"> Z - A</option>";
+botaoRaridade.innerHTML = "<option value=\"none\">Raridade</option> <option value=\"maisRaros\">Raros</option> <option value=\"menosRaros\">Comuns</option>";
 
-//passo 3
+//Evento dos botões
 botaoFiltro.addEventListener("change", filtro);
 botaoFraqueza.addEventListener("change", fraqueza);
-botaoRaridade.addEventListener("change", raridade);
 botaoOrdem.addEventListener("change", ordem);
+botaoRaridade.addEventListener("change", raridade);
 
+//FUNÇÕES
 function filtro() {
   exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value, "type"));
   if (botaoFiltro.value == "none") {
-    exibeCartao(POKEMONS);
+  exibeCartao(POKEMONS);
   }
   botaoFraqueza.value = "none";
   botaoOrdem.value = "none";
@@ -95,43 +95,49 @@ function fraqueza() {
   botaoFiltro.value = "none";
   botaoOrdem.value = "none";
   botaoRaridade.value = "none";
-}
+} 
 
-function ordem() {
+function ordem () {
   exibeCartao(app.ordenar(POKEMONS, botaoOrdem.value, "name"));
   botaoFiltro.value = "none";
   botaoFraqueza.value = "none";
   botaoRaridade.value = "none";
-}
+} 
 
-function raridade() {
+function raridade () {
   exibeCartao(app.ordenar(POKEMONS, botaoRaridade.value, "spawn_chance"));
   botaoFiltro.value = "none";
   botaoFraqueza.value = "none";
   botaoOrdem.value = "none";
 }
 
-/*if (botaoFiltro.value == "none" && botaoFraqueza.value == "none") {
-    exibeCartao(POKEMONS);
-  } else if (botaoFiltro.value == "none" && botaoFraqueza.value != "none") {
-    exibeCartao(app.filtrar(POKEMONS, botaoFraqueza.value,"weaknesses"));
-  } else if (botaoFiltro.value != "none" && botaoFraqueza.value == "none") {
-    exibeCartao(app.filtrar(POKEMONS, botaoFiltro.value, "type"));
-  } else if ((botaoFiltro.value != "none" && botaoFraqueza.value != "none")) {
-    alert("não é possivel utilizar dois filtros ao mesmo tempo, por favor, selecione apenas uma opção");
-    botaoFiltro.value = "none";
-    botaoFraqueza.value = "none";
-    exibeCartao(POKEMONS);
-  }
-}  */
+//CALCULOS CURIOSIDADES
+const arrAltura = (POKEMONS.map(poke => poke.height)).map((i) => Number(i.replace(/[^0-9.,]+/g, "")));
+const arrPeso = (POKEMONS.map(poke => poke.weight)).map((i) => Number(i.replace(/[^0-9.,]+/g, "")));
 
+//maiores e menores
+const nome = POKEMONS.map(poke => poke.name);
 
+const menorAltura = (Math.min.apply(Math, arrAltura));
+const menorPoke = nome[(arrAltura.indexOf(menorAltura))];
+const maiorAltura = (Math.max.apply(Math, arrAltura));
+const maiorPoke = nome[(arrAltura.indexOf(maiorAltura))];
 
-/*CALCULOS
-const arrWeight = Object.values(POKEMONS.map(poke => poke.weight));
-const listaPesos = arrWeight.map((i) => Number(i.replace(/[^0-9.,]+/g, "")));
-const acumulador = listaPesos.reduce(function(somaTotal, valorAtual) {
-  return somaTotal + valorAtual;
-},);
-const calc = (acumulador / listaPesos.length).toFixed(2);
-console.log(calc);*/
+const menorPeso = (Math.min.apply(Math, arrPeso));
+const magrinhoPoke = nome[(arrPeso.indexOf(menorPeso))];
+const maiorPeso = (Math.max.apply(Math, arrPeso));
+const gordinhoPoke = nome[(arrPeso.indexOf(maiorPeso))];
+
+//tela de curiosidades
+medias.innerHTML = `A média de Altura de todos os pokemons é: ${app.media(POKEMONS.map(poke => poke.height)).toFixed(2)} metros.</br>
+Sendo o menor deles é o ${menorPoke}, medindo apenas ${menorAltura} metros, e o maior é o ${maiorPoke}, medindo ${maiorAltura} metros.</br>`;
+medias.innerHTML += `A média do Peso de todos os pokemons é: ${app.media(POKEMONS.map(poke => poke.weight)).toFixed(2)} kg.</br>
+O mais leve deles é o ${magrinhoPoke}, com apenas ${menorPeso} kg, enquanto o mais pesado é o ${gordinhoPoke}, pesando exatos ${maiorPeso} kg.`;
+
+let pokesExtremos = [POKEMONS[(arrAltura.indexOf(menorAltura))], POKEMONS[(arrAltura.indexOf(maiorAltura))], POKEMONS[(arrPeso.indexOf(menorPeso))], POKEMONS[(arrPeso.indexOf(maiorPeso))]];
+const extremos = () => (exibeCartao(pokesExtremos));
+const todos = () => (exibeCartao(POKEMONS));
+
+ver.addEventListener("click", extremos);
+vertodos.addEventListener("click", todos);
+
