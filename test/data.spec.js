@@ -63,3 +63,16 @@ describe("função ordem", () => {
   });
 });
 
+describe("função media", () => {
+  it("is a function", () => {
+    expect(typeof app.media).toBe("function");
+  });
+
+  it("returns `media da altura dos pokemons`", () => {
+    expect(app.media(["0.89 m", "1.40 m", "0.61 m", "1.30 m", "0.61 m", "1.09 m", "0.51 m", "0.99 m", "0.79 m", "1.60 m", "0.51 m", "0.79 m", "1.19 m", "0.30 m", "0.99 m", "0.99 m", "1.50 m", "0.20 m", "0.71 m", "0.41 m", "0.99 m"])).toEqual(0.8747619047619049);
+  });
+
+  it("returns `media dos pesos dos pokemons`", () => {
+    expect(app.media(["19.5 kg", "62.0 kg", "7.5 kg", "40.0 kg", "9.9 kg", "19.9 kg", "5.5 kg", "12.0 kg", "7.5 kg", "55.0 kg", "5.4 kg", "8.6 kg", "18.6 kg", "5.4 kg", "29.5 kg", "30.0 kg", "12.5 kg", "0.8 kg", "33.3 kg", "4.2 kg", "32.0 kg"])).toEqual(19.95714285714286);
+  });
+});
