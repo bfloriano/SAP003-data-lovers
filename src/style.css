@@ -1,14 +1,15 @@
+
 .container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  /* background-image: url("imagens/pokemon-anime-background-4.png"); */
-  background-image: url("imagens/teste5.jpg");
+  background-image: url("imagens/teste14.jpg");  
 }
 
 header {
   background-color: rgba(255, 0, 0, 0.795);
-  font-family: Impact;
+  color: #0047AB;
+  font: normal 20px arial;
   text-align: center;
   padding: 2% 2% 0% 2%;
 }
@@ -39,18 +40,17 @@ footer {
 
 #botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade, #ver, #vertodos, #busca {
   background-color: rgba(255, 255, 255, 0.904);
-  border-color: rgb(255, 255, 255);
+  border: 2px solid #0047AB;
   border-radius: 15px;
   width: 100px;
   height: 30px;
-  color: rgb(18, 16, 36);
+  color: #0047AB;
   font: bolder 12pt arial;
   margin: 2%;
 }
 
 #ver, #vertodos {
-  background-color: rgba(252, 255, 88, 0.76);
-  color: black;
+  background-color: rgb(228, 247, 52);
   border-radius: 10px;
   margin: 5%;
 }
@@ -63,16 +63,18 @@ footer {
 
 aside {
   text-align: center;
-  font-weight: bolder;
+  font: bolder 18px arial;
+  color: white;
   width: 100%;
   height: 100%;
   margin-bottom: 1%;
-  background-color: rgba(116, 182, 235, 0.733);
+  background-color: #0047AB;
   border: 0.5px solid rgb(255, 255, 255);
 }
 
 #medias {
   display: inline-block;
+  color: white;
   text-align: auto;
   font-weight: normal;
   width: 70%;
@@ -102,7 +104,7 @@ aside {
   height: 170px;
   margin: 1%;
   padding: 0.5%;
-  border: 2px solid rgb(255, 230, 0);
+  border: 2px solid rgb(238, 255, 2);
   border-radius: 15px;
   box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
 }
@@ -157,5 +159,13 @@ aside {
     display: flex;
     width: 100%;
     justify-content: center;
+  }
+
+  aside {
+    font: normal 16px arial;
+  }
+
+  header {
+    font: normal 16px arial;
   }
 }
