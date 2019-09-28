@@ -5,24 +5,11 @@
   background-image: url("imagens/pokemon-anime-background-4.png");
 }
 
-/* @media (min-width: 440px) {
-  .container {
-    max-width: 440px;
-    padding: 0;
-  }
-    /* .card {
-      width: 150px;
-      height: 120px;
-  } */
-  
-/* 1360x768 */
-
-
 header {
-    background-color: rgba(255, 0, 0, 0.795);
-    font-family: Impact;
-    text-align: center;
-    padding: 2% 2% 0% 2%;
+  background-color: rgba(255, 0, 0, 0.795);
+  font-family: Impact;
+  text-align: center;
+  padding: 2% 2% 0% 2%;
 }
 
 .logo {
@@ -43,74 +30,58 @@ header {
 
 .botons {
   text-align: center;
+}
 
-  
-  /* display: inline-block; */
-  /* justify-content: space-between; */
-  /* background-color: rgba(137, 43, 226, 0.308); */
-  /* lighting-color: blue; */
-    }
+#botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade, #ver, #vertodos {
+  background-color: rgba(255, 255, 255, 0.904);
+  border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  color: rgb(18, 16, 36);
+  font: bolder 12pt arial;
+  margin: 2%;
+}
 
-    #botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade {
-      background-color: rgba(255, 255, 255, 0.384);
-      border-color: rgb(255, 255, 255);
-      border-radius: 15px;
-      width: 100px;
-      height: 30px;
-      color: rgb(255, 255, 255);
-      font: bolder 12pt arial;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-top: 2%;
-    }
-    /* #botao-fraqueza {
-        background-color: rgba(90, 90, 90, 0.384);
-        border-color: rgb(255, 255, 255);
-        border-radius: 15px;
-        width: 100px;
-        height: 30px;
-        color: rgb(255, 255, 255);
-        font: bolder 12pt arial;
-        margin-right: 5%;
-      } */
-
-main {
-      background-color: rgba(0, 71, 171, 0.295);
-    /* align-self: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    
+#ver, #vertodos {
+  background-color: rgba(252, 255, 88, 0.76);
+  color: black;
+  border-radius: 10px;
+  margin: 5%;
 }
 
 aside {
   text-align: center;
+  font-weight: bolder;
   width: 100%;
-  height: 150px;
-  margin-bottom: 2%;
-  margin-top: 2%;
-  background-color: rgba(173, 173, 173, 0.452);
+  height: 100%;
+  margin-bottom: 1%;
+  background-color: rgba(116, 182, 235, 0.733);
   border: 0.5px solid rgb(255, 255, 255);
-  /* align-content: center; */
-  /* display: inline-block; */
-  /* justify-content: flex-end; */
-  /* align-content: flex-start; */
-  /* text-align: right; */
-  
+}
+#medias {
+  display: inline-block;
+  text-align: auto;
+  font-weight: normal;
+  width: 70%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+#botons-aside {
+  display: inline-block;
+  vertical-align: top;
+  padding: 2%;
+  width: 20%;
+  height: 100%;
 }
     
-
 #cartao {
   text-align: center;
-    /* display: inline-block; */
-    /* justify-content: center; */
-    /* align-content: auto; */
-    /* align-items: auto; */
 }
   
 .card {
     display: inline-block;
-    /* justify-content: center; */
-    background-color: rgba(255, 255, 255, 0.712);
+    background-color: rgba(255, 255, 255, 0.781);
     text-align: center;
     font-style: italic;
     font-weight: bold;
@@ -121,20 +92,13 @@ aside {
     border: 2px solid rgb(255, 230, 0);
     border-radius: 15px;
     box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
-    
 }
-/* .card img {
-  width: 100%;
-} */
 
 .card-inner {
-    /* position: relative; */
     width: 100%;
     height: 100%;
-    /* text-align: center; */
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   }
   
   .card:hover .card-inner {
@@ -150,14 +114,35 @@ aside {
   }
   
   .card-front {
-    background-color: #bbb;
-    /* color: black; */
+    background-color: rgb(233, 232, 210)160, 146, 146;
   }
   
   .card-back {
     background-color: rgba(255, 255, 255, 0.493);
-    /* color: white; */
     transform: rotateY(180deg);
-    /* vertical-align: center; */
-    /* border-radius: 5px; */
   }
+
+@media (max-width: 450px) {
+  .card {
+    width: 120px;
+    height: 170px;
+    font-size: small;
+    margin: 1%;
+    }
+
+  #botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade {
+    width: 120px;
+    font: normal 10pt arial;
+  }
+
+  #ver, #vertodos {
+    height: 30px;
+    font: normal 10pt arial;
+  }
+
+  #botons-aside {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
