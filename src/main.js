@@ -1,4 +1,3 @@
-//const POKEMONS = require("./data/pokemon/pokemon.json");
 const POKEMONS = POKEMON.pokemon;
 let cartao = document.getElementById("cartao");
 let botaoFiltro = document.getElementById("botao-filtro");

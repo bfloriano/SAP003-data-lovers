@@ -21,7 +21,7 @@ O objetivo do projeto foi introduzir o uso de um banco de dados, onde nos foram 
 O banco de dados escolhido foi o Pokémons. A partir daí, foram criadas histórias de usuários, que nos permitiram desenvolver diferentes funcionalidades.
 
 Link para acessar nossa plataforma:
-[PokeWorld](link)
+[PokeWorld](https://bfloriano.github.io/SAP003-data-lovers/src/index)
  
 ## 2. Histórias de Usuários - H.U.
  
@@ -93,7 +93,7 @@ Estes foram alguns rascunhos que criamos do projeto:
  - Protótipo da criação no papel <br/>![Protótipo 1](/src/imagens/prototipo1.jpeg)<br/><br/>
  - Link do app Marvel
  [Clique para ver](https://marvelapp.com/project/4344075/)<br/>
-![Protótipo ](/src/imagens/tela2.jpeg)
+![Protótipo ](/src/imagens/tela1.jpeg)
  
 
  - protótipo da criação no computador <br/>  ![Protótipo ](/src/imagens/prototipo2.jpeg)
