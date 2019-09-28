@@ -2,7 +2,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("imagens/pokemon-anime-background-4.png");
+  /* background-image: url("imagens/pokemon-anime-background-4.png"); */
+  background-image: url("imagens/teste5.jpg");
 }
 
 header {
@@ -28,11 +29,15 @@ header {
   width: 12%;
 }
 
+footer {
+  text-align: center;
+}
+
 .botons {
   text-align: center;
 }
 
-#botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade, #ver, #vertodos {
+#botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade, #ver, #vertodos, #busca {
   background-color: rgba(255, 255, 255, 0.904);
   border-color: rgb(255, 255, 255);
   border-radius: 15px;
@@ -50,6 +55,12 @@ header {
   margin: 5%;
 }
 
+#busca {
+  background-color: rgb(179, 208, 255);
+  width: 220px;
+  font: normal 10pt arial;
+}
+
 aside {
   text-align: center;
   font-weight: bolder;
@@ -59,6 +70,7 @@ aside {
   background-color: rgba(116, 182, 235, 0.733);
   border: 0.5px solid rgb(255, 255, 255);
 }
+
 #medias {
   display: inline-block;
   text-align: auto;
@@ -67,6 +79,7 @@ aside {
   margin-top: 2%;
   margin-bottom: 2%;
 }
+
 #botons-aside {
   display: inline-block;
   vertical-align: top;
@@ -80,47 +93,47 @@ aside {
 }
   
 .card {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.781);
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;
-    width: 200px;
-    height: 170px;
-    margin: 1%;
-    padding: 0.5%;
-    border: 2px solid rgb(255, 230, 0);
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.781);
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  width: 200px;
+  height: 170px;
+  margin: 1%;
+  padding: 0.5%;
+  border: 2px solid rgb(255, 230, 0);
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
 }
 
 .card-inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
   }
   
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
   
-  .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 5px;
-  }
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
   
-  .card-front {
-    background-color: rgb(233, 232, 210)160, 146, 146;
-  }
+.card-front {
+  background-color: rgb(233, 232, 210)160, 146, 146;
+}
   
-  .card-back {
-    background-color: rgba(255, 255, 255, 0.493);
-    transform: rotateY(180deg);
-  }
+.card-back {
+  background-color: rgba(255, 255, 255, 0.493);
+  transform: rotateY(180deg);
+}
 
 @media (max-width: 450px) {
   .card {

@@ -8,6 +8,7 @@ let botaoRaridade = document.getElementById("botao-raridade");
 let medias = document.getElementById("medias");
 let ver = document.getElementById("ver");
 let vertodos = document.getElementById("vertodos");
+let busca = document.getElementById("busca");
 
 //executar a função ao abrir a pagina para listar as opções dos botões e os cards
 onload = () => {
@@ -144,3 +145,12 @@ const todos = () => {
 
 ver.addEventListener("click", extremos);
 vertodos.addEventListener("click", todos);
+
+// Barra de busca
+busca.addEventListener("keyup", () => {
+  exibeCartao(app.filtrar(POKEMONS, busca.value, "name"));
+  botaoFiltro.value = "none";
+  botaoFraqueza.value = "none";
+  botaoOrdem.value = "none";
+  botaoRaridade.value = "none";
+});
