@@ -1,33 +1,17 @@
+
 .container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("imagens/pokemon-anime-background-4.png");
+  background-image: url("imagens/teste14.jpg");  
 }
-
-h2{
-  color: rgb(5, 14, 95);
-  padding: 0% 0% 1% 0%;
-}
-
-/* @media (min-width: 440px) {
-  .container {
-    max-width: 440px;
-    padding: 0;
-  }
-    /* .card {
-      width: 150px;
-      height: 120px;
-  } */
-  
-/* 1360x768 */
-
 
 header {
-    background-color: rgba(255, 0, 0, 0.795);
-    font-family: Impact;
-    text-align: center;
-    padding: 2% 2% 0% 2%;
+  background-color: rgba(255, 0, 0, 0.795);
+  color: #0047AB;
+  font: normal 20px arial;
+  text-align: center;
+  padding: 2% 2% 0% 2%;
 }
 
 .logo {
@@ -46,130 +30,142 @@ header {
   width: 12%;
 }
 
+footer {
+  text-align: center;
+}
+
 .botons {
   text-align: center;
+}
 
+#botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade, #ver, #vertodos, #busca {
+  background-color: rgba(255, 255, 255, 0.904);
+  border: 2px solid #0047AB;
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  color: #0047AB;
+  font: bolder 12pt arial;
+  margin: 2%;
+}
 
-  
-  /* display: inline-block; */
-  /* justify-content: space-between; */
-  /* background-color: rgba(137, 43, 226, 0.308); */
-  /* lighting-color: blue; */
-    }
+#ver, #vertodos {
+  background-color: rgb(228, 247, 52);
+  border-radius: 10px;
+  margin: 5%;
+}
 
-    #botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade {
-      background-color: rgba(5, 14, 95, 0.384);
-      border-color: rgb(255, 255, 255);
-      border-radius: 15px;
-      width: 10%;
-      height: 25%;
-      color: rgb(255, 255, 255);
-      font: bolder 12pt arial;
-      margin-right: 2%;
-      margin-left: 2%;
-
-    }
-
-
-  
-    /* #botao-fraqueza {
-        background-color: rgba(90, 90, 90, 0.384);
-        border-color: rgb(255, 255, 255);
-        border-radius: 15px;
-        width: 100px;
-        height: 30px;
-        color: rgb(255, 255, 255);
-        font: bolder 12pt arial;
-        margin-right: 5%;
-      } */
-
-main {
-      background-color: rgba(0, 71, 171, 0.295);
-    /* align-self: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    
+#busca {
+  background-color: rgb(179, 208, 255);
+  width: 220px;
+  font: normal 10pt arial;
 }
 
 aside {
   text-align: center;
+  font: bolder 18px arial;
+  color: white;
   width: 100%;
-  height: 80%;
-  margin-bottom: 2%;
-  margin-top: 2%;
-  background-color: rgba(173, 173, 173, 0.452);
+  height: 100%;
+  margin-bottom: 1%;
+  background-color: #0047AB;
   border: 0.5px solid rgb(255, 255, 255);
-  padding: 0% 2% 0% 2%;
-  
+}
 
-  /* align-content: center; */
-  /* display: inline-block; */
-  /* justify-content: flex-end; */
-  /* align-content: flex-start; */
-  /* text-align: right; */
-  
+#medias {
+  display: inline-block;
+  color: white;
+  text-align: auto;
+  font-weight: normal;
+  width: 70%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#botons-aside {
+  display: inline-block;
+  vertical-align: top;
+  padding: 2%;
+  width: 20%;
+  height: 100%;
 }
     
-
 #cartao {
   text-align: center;
-    /* display: inline-block; */
-    /* justify-content: center; */
-    /* align-content: auto; */
-    /* align-items: auto; */
 }
   
 .card {
-    display: inline-block;
-    /* justify-content: center; */
-    background-color: rgba(255, 255, 255, 0.712);
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;
-    width: 200px;
-    height: 170px;
-    margin: 1%;
-    padding: 0.5%;
-    border: 2px solid rgb(255, 230, 0);
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
-    
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.781);
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  width: 200px;
+  height: 170px;
+  margin: 1%;
+  padding: 0.5%;
+  border: 2px solid rgb(238, 255, 2);
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
 }
-/* .card img {
-  width: 100%;
-} */
 
 .card-inner {
-    /* position: relative; */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  }
+  
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+  
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+  
+.card-front {
+  background-color: rgb(233, 232, 210)160, 146, 146;
+}
+  
+.card-back {
+  background-color: rgba(255, 255, 255, 0.493);
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 450px) {
+  .card {
+    width: 120px;
+    height: 170px;
+    font-size: small;
+    margin: 1%;
+    }
+
+  #botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade {
+    width: 120px;
+    font: normal 10pt arial;
+  }
+
+  #ver, #vertodos {
+    height: 30px;
+    font: normal 10pt arial;
+  }
+
+  #botons-aside {
+    display: flex;
     width: 100%;
-    height: 100%;
-    /* text-align: center; */
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    justify-content: center;
   }
-  
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
+
+  aside {
+    font: normal 16px arial;
   }
-  
-  .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 5px;
+
+  header {
+    font: normal 16px arial;
   }
-  
-  .card-front {
-    background-color: #bbb;
-    /* color: black; */
-  }
-  
-  .card-back {
-    background-color: rgba(255, 255, 255, 0.493);
-    /* color: white; */
-    transform: rotateY(180deg);
-    /* vertical-align: center; */
-    /* border-radius: 5px; */
-  }
+}

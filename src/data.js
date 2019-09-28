@@ -11,7 +11,7 @@ const ordenar = (arr, condition, key) => {
   }
 };
 
-const media = (arr) => (arr.map((i) => Number(i.replace(/[^0-9.,]+/g, ""))).reduce((pv, item) => (pv + item))/151);
+const media = (arr) => (arr.map((i) => Number(i.replace(/[^0-9.,]+/g, ""))).reduce((pv, item) => (pv + item))/(arr.length));
 
 app = {
   filtrar: filtrar, 
