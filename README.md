@@ -19,6 +19,9 @@ Esse foi o segundo projeto proposto no curso de desenvolvimento front-end da Lab
 O objetivo do projeto foi introduzir o uso de um banco de dados, onde nos foram passados diferentes temas, e pudemos escolher um de nossa preferência para trabalhar.
  
 O banco de dados escolhido foi o Pokémons. A partir daí, foram criadas histórias de usuários, que nos permitiram desenvolver diferentes funcionalidades.
+
+Link para acessar nossa plataforma:
+[PokeWorld](link)
  
 ## 2. Histórias de Usuários - H.U.
  
@@ -34,7 +37,7 @@ Para o desenvolvimentos das histórias de usuários, criamos protótipos de pers
  
  - Persona 4  -![Protótipo 1](/src/imagens/persona4.jpeg)
 
- - Persona 5  -![Protótipo 1](/src/imagens/persona5.jpeg)
+ - Persona 5 -![Protótipo 1](/src/imagens/persona5.jpeg)
 
  - Persona 6  -![Protótipo 1](/src/imagens/persona6.jpeg)
 
@@ -87,9 +90,12 @@ Depois das proto-personas criadas e histórias dos usuários feitas, fizemos alg
  
 Estes foram alguns rascunhos que criamos do projeto:
  
- - Protótipo da criação no computador <br/>![Protótipo 1](/src/imagens/prototipo1.jpeg)<br/><br/>
+ - Protótipo da criação no papel <br/>![Protótipo 1](/src/imagens/prototipo1.jpeg)<br/><br/>
  - Link do app Marvel
- [Clique para ver](https://marvelapp.com/project/4344075/)<br/><br/>
+ [Clique para ver](https://marvelapp.com/project/4344075/)<br/>
+![Protótipo ](/src/imagens/tela2.jpeg)
+ 
+
  - protótipo da criação no computador <br/>  ![Protótipo ](/src/imagens/prototipo2.jpeg)
  
  
