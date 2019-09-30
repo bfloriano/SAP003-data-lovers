@@ -45,7 +45,7 @@ De acordo com as proto-personas criadas, desenvolvemos diversas histórias de us
  
 ### H.U. 1 - Exibir dados na tela
  
-“Como jogador de pokémon, eu gostaria de ver todos eles em uma única plataforma, além de poder visualizar suas características mais importantes, para me organizar e ter um acesso fácil das informações.”
+"Como jogador de pokémon, eu gostaria de ver todos eles em uma única plataforma, além de poder visualizar suas características mais importantes, para me organizar e ter um acesso fácil das informações."
  
 ### H.U. 2 - Filtrar pokémons por tipo
  
@@ -53,19 +53,19 @@ De acordo com as proto-personas criadas, desenvolvemos diversas histórias de us
  
 ### H.U. 3 - Filtrar pokémons por fraqueza
  
-“Como um jogador de pokémon, eu quero poder consultá-los de acordo com suas fraquezas, para que eu possa entrar numa batalha e saber qual pokémon atacar com mais possibilidade de vitória.“
+"Como um jogador de pokémon, eu quero poder consultá-los de acordo com suas fraquezas, para que eu possa entrar numa batalha e saber qual pokémon atacar com mais possibilidade de vitória."
  
 ### H.U. 4 - Ordenação por nome em ordem alfabética
  
-“Como um usuário da plataforma, eu quero poder visualizar meus pokémons em ordem alfabética, para encontrar mais facilmente um pokémon específico.“
+"Como um usuário da plataforma, eu quero poder visualizar meus pokémons em ordem alfabética, para encontrar mais facilmente um pokémon específico."
  
 ### H.U. 5 - Ordenação dos pokémons por raridade
  
-“Como um jogador de pokémon, eu quero saber quais pokémons são os mais raros para poder ir à caça e me tornar um jogador de alto nível.“
+"Como um jogador de pokémon, eu quero saber quais pokémons são os mais raros para poder ir à caça e me tornar um jogador de alto nível."
  
 ### H.U. 6 - Cálculo de média
  
-“Como um usuário da plataforma, gostaria de ter acesso a informações a nível de curiosidade, como qual o pokémon mais pesado por exemplo, para poder conversar com outros jogadores sobre isso.“
+"Como um usuário da plataforma, gostaria de ter acesso a informações a nível de curiosidade, como qual o pokémon mais pesado por exemplo, para poder conversar com outros jogadores sobre isso."
  
 ## 3. Funcionalidades
  
@@ -76,7 +76,7 @@ As histórias de usuário criadas, nos permitiram focar em três funcionalidades
  
 Exploramos cada uma das funcionalidades de maneira a tornar a experiência do usuário mais agradável e fazer da plataforma algo realmente útil aos jogadores de pokémons.
  
-Ao explorar a funcionalidade filtro, optamos por filtrar dois tipos de dados diferentes. Primeiramente o filtro baseado no tipo do pokémon, que oferece opções como Water`, `Ice` ou `Flying` por exemplo. E o filtro baseado nas fraquezas de cada pokémon.
+Ao explorar a funcionalidade filtro, optamos por filtrar dois tipos de dados diferentes. Primeiramente o filtro baseado no tipo do pokémon, que oferece opções como `Water`, `Ice` ou `Flying` por exemplo. E o filtro baseado nas fraquezas de cada pokémon.
  
 A funcionalidade de ordenação, foi explorada visando oferecer ao usuário mais praticidade, permitindo a consulta dos dados ordenando os pokémons pelo nome em ordem alfabética, e também permite ao usuário ordená-los de acordo com o quão raro eles são.
  
