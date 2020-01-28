@@ -1,3 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 
 .container {
   width: 100%;
@@ -7,7 +13,6 @@
 }
 
 header {
-  background-color: rgba(255, 0, 0, 0.795);
   color: #0047AB;
   font: normal 20px arial;
   text-align: center;
@@ -20,12 +25,12 @@ header {
   padding: 0% 3% 0% 3%;
 }
 
-.gif-poke {
+.gif-pokeball {
   height: 8%; 
   width: 8%;
 }
 
-.gif-pika {
+.gif-pikachu {
   height: 12%; 
   width: 12%;
 }
@@ -38,7 +43,7 @@ footer {
   text-align: center;
 }
 
-#botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade, #ver, #vertodos, #busca {
+#filter-button, #weakness-button, #sort-button, #rarity-button, #see-button, #see-all-button, #search-pokemon {
   background-color: rgba(255, 255, 255, 0.904);
   border: 2px solid #0047AB;
   border-radius: 15px;
@@ -49,13 +54,13 @@ footer {
   margin: 2%;
 }
 
-#ver, #vertodos {
+#see-button, #see-all-button {
   background-color: rgb(228, 247, 52);
   border-radius: 10px;
   margin: 5%;
 }
 
-#busca {
+#search-pokemon {
   background-color: rgb(179, 208, 255);
   width: 220px;
   font: normal 10pt arial;
@@ -67,6 +72,7 @@ aside {
   color: white;
   width: 100%;
   height: 100%;
+  padding: 15px;
   margin-bottom: 1%;
   background-color: #0047AB;
   border: 0.5px solid rgb(255, 255, 255);
@@ -104,9 +110,10 @@ aside {
   height: 170px;
   margin: 1%;
   padding: 0.5%;
-  border: 2px solid rgb(238, 255, 2);
+  border: 1px solid rgb(238, 255, 2);
   border-radius: 15px;
-  box-shadow: 5px 5px 5px 5px rgba(165, 163, 38, 0.801);
+  box-shadow: 3px 3px 3px 3px rgba(255, 251, 0, 0.801);
+  
 }
 
 .card-inner {
@@ -135,6 +142,9 @@ aside {
 .card-back {
   background-color: rgba(255, 255, 255, 0.493);
   transform: rotateY(180deg);
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 450px) {
@@ -145,12 +155,13 @@ aside {
     margin: 1%;
     }
 
-  #botao-filtro, #botao-fraqueza, #botao-ordem, #botao-raridade {
+  
+#filter-button, #weakness-button, #sort-button, #rarity-button {
     width: 120px;
     font: normal 10pt arial;
   }
 
-  #ver, #vertodos {
+  #see-button, #see-all-button {
     height: 30px;
     font: normal 10pt arial;
   }
