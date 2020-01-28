@@ -113,6 +113,7 @@ aside {
   border: 1px solid rgb(238, 255, 2);
   border-radius: 15px;
   box-shadow: 3px 3px 3px 3px rgba(255, 251, 0, 0.801);
+  
 }
 
 .card-inner {
@@ -141,6 +142,9 @@ aside {
 .card-back {
   background-color: rgba(255, 255, 255, 0.493);
   transform: rotateY(180deg);
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 450px) {

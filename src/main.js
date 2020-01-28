@@ -1,4 +1,6 @@
-/* const getCards = () => {
+const teste = [];
+
+const getCards = () => {
   fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151")
     .then(response => response.json())
     .then(data => {
@@ -7,15 +9,20 @@
         fetch(pokemon.url)
           .then(response => response.json())
           .then(data2 => {
-            let picturePoke = data2.sprites.front_default;
-            let namePoke = data2.name;
-            let getPokeType = data2.types.map(type => type.type.name);
-            pokecards({ name: namePoke, img: picturePoke, type: getPokeType });
+            const {sprites, name, height, weight, types} = data2;
+           
+            let picturePoke = sprites.front_default;
+            //let namePoke = data2.name; 
+            let getPokeType = types.map(type => type.type.name);
+
+            cardDisplay({ name, img: picturePoke, type: getPokeType, height, weight});
           });
       });
-    }); */
+    });
+};
+getCards();
 
-const POKEMONS = POKEMON.pokemon;
+//const POKEMONS = POKEMON.pokemon;
 let cartao = document.getElementById("cartao");
 let filterButton = document.getElementById("filter-button");
 let weaknessButton = document.getElementById("weakness-button");
@@ -28,26 +35,26 @@ let searchPokemon = document.getElementById("search-pokemon");
 
 //executar a função ao abrir a pagina para listar as opções dos botões e os cards
 onload = () => {
-  cardDisplay(POKEMONS);
+  //cardDisplay(POKEMONS);
   typeList(POKEMONS);
   weaknessList(POKEMONS);  
 };
 
+let cardzinho = "";
 //exibição do card
-function cardDisplay(arr) {
-  let cardzinho ="";
-  arr.forEach(poke => {
-    cardzinho += `
+function cardDisplay(poke) {
+  // console.log( "oi" , poke)
+
+  cardzinho += `
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
             <img src="${poke.img}" />
               <p class="nome">${poke.name}</p>
           </div>
-          <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count ? poke.candy_count : "Ùltima Evolução"}</div>
+          <div class="card-back">Altura: ${poke.height} mts</br>Peso: ${poke.weight} kgs</br>Tipo: ${poke.type}</br></div>
         </div>
       </div>`;
-  });
   cartao.innerHTML = cardzinho;
 }
    
@@ -95,7 +102,7 @@ rarityButton.addEventListener("change", raridade);
 
 //FUNÇÕES
 function filtro() {
-  cardDisplay(app.filtrar(POKEMONS, filterButton.value, "type"));
+  cardDisplay(app.filtrar(POKEMON, filterButton.value, "type"));
   if (filterButton.value == "none") {
     cardDisplay(POKEMONS);
   }
