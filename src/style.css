@@ -2,48 +2,47 @@
   padding: 0;
   margin: 0;
   border: 0;
-}
-
-
-.container {
+  }
+  
+  .container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("imagens/teste14.jpg");  
-}
-
-header {
+  background-image: url("imagens/teste14.jpg"); 
+  }
+  
+  header {
   color: #0047AB;
   font: normal 20px arial;
   text-align: center;
   padding: 2% 2% 0% 2%;
-}
-
-.logo {
+  }
+  
+  .logo {
   height: 50%; 
   width: 40%;
   padding: 0% 3% 0% 3%;
-}
-
-.gif-pokeball {
+  }
+  
+  .gif-pokeball {
   height: 8%; 
   width: 8%;
-}
-
-.gif-pikachu {
+  }
+  
+  .gif-pikachu {
   height: 12%; 
   width: 12%;
-}
-
-footer {
+  }
+  
+  footer {
   text-align: center;
-}
-
-.botons {
+  }
+  
+  .botons {
   text-align: center;
-}
-
-#filter-button, #weakness-button, #sort-button, #rarity-button, #see-button, #see-all-button, #search-pokemon {
+  }
+  
+  #filter-button, #weakness-button, #sort-button, #rarity-button, #see-button, #see-all-button, #search-pokemon {
   background-color: rgba(255, 255, 255, 0.904);
   border: 2px solid #0047AB;
   border-radius: 15px;
@@ -52,21 +51,21 @@ footer {
   color: #0047AB;
   font: bolder 12pt arial;
   margin: 2%;
-}
-
-#see-button, #see-all-button {
+  }
+  
+  #see-button, #see-all-button {
   background-color: rgb(228, 247, 52);
   border-radius: 10px;
   margin: 5%;
-}
-
-#search-pokemon {
+  }
+  
+  #search-pokemon {
   background-color: rgb(179, 208, 255);
   width: 220px;
   font: normal 10pt arial;
-}
-
-aside {
+  }
+  
+  aside {
   text-align: center;
   font: bolder 18px arial;
   color: white;
@@ -76,9 +75,9 @@ aside {
   margin-bottom: 1%;
   background-color: #0047AB;
   border: 0.5px solid rgb(255, 255, 255);
-}
-
-#medias {
+  }
+  
+  #medias {
   display: inline-block;
   color: white;
   text-align: auto;
@@ -86,21 +85,19 @@ aside {
   width: 70%;
   margin-top: 2%;
   margin-bottom: 2%;
-}
-
-#botons-aside {
+  }
+  
+  #botons-aside {
   display: inline-block;
   vertical-align: top;
   padding: 2%;
   width: 20%;
   height: 100%;
-}
-    
-#cartao {
+  }
+  #cartao {
   text-align: center;
-}
-  
-.card {
+  }
+  .card {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.781);
   text-align: center;
@@ -113,70 +110,66 @@ aside {
   border: 1px solid rgb(238, 255, 2);
   border-radius: 15px;
   box-shadow: 3px 3px 3px 3px rgba(255, 251, 0, 0.801);
+  }
   
-}
-
-.card-inner {
+  .card-inner {
   width: 100%;
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   }
-  
-.card:hover .card-inner {
+  .card:hover .card-inner {
   transform: rotateY(180deg);
-}
-  
-.card-front, .card-back {
+  }
+  .card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   border-radius: 5px;
-}
-  
-.card-front {
+  }
+  .card-front {
   background-color: rgb(233, 232, 210)160, 146, 146;
-}
-  
-.card-back {
+  }
+  .card-back {
   background-color: rgba(255, 255, 255, 0.493);
   transform: rotateY(180deg);
   align-items: center;
   display: flex;
   justify-content: center;
-}
-
-@media (max-width: 450px) {
-  .card {
-    width: 120px;
-    height: 170px;
-    font-size: small;
-    margin: 1%;
-    }
-
+  }
   
-#filter-button, #weakness-button, #sort-button, #rarity-button {
-    width: 120px;
-    font: normal 10pt arial;
+  @media (max-width: 450px) {
+  .card {
+  width: 120px;
+  height: 170px;
+  font-size: small;
+  margin: 1%;
   }
-
+  
+  #filter-button, #weakness-button, #sort-button, #rarity-button {
+  width: 120px;
+  font: normal 10pt arial;
+  }
+  
   #see-button, #see-all-button {
-    height: 30px;
-    font: normal 10pt arial;
+  height: 30px;
+  font: normal 10pt arial;
   }
-
+  
   #botons-aside {
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
   }
-
+  
   aside {
-    font: normal 16px arial;
+  font: normal 16px arial;
   }
-
+  
   header {
-    font: normal 16px arial;
+  font: normal 16px arial;
   }
-}
+  }
+  
+  

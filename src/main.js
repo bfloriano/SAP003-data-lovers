@@ -1,28 +1,4 @@
-const teste = [];
-
-const getCards = () => {
-  fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151")
-    .then(response => response.json())
-    .then(data => {
-      //fetch(data.results[index].url)
-      data.results.map(pokemon => {
-        fetch(pokemon.url)
-          .then(response => response.json())
-          .then(data2 => {
-            const {sprites, name, height, weight, types} = data2;
-           
-            let picturePoke = sprites.front_default;
-            //let namePoke = data2.name; 
-            let getPokeType = types.map(type => type.type.name);
-
-            cardDisplay({ name, img: picturePoke, type: getPokeType, height, weight});
-          });
-      });
-    });
-};
-getCards();
-
-//const POKEMONS = POKEMON.pokemon;
+const POKEMONS = POKEMON.pokemon;
 let cartao = document.getElementById("cartao");
 let filterButton = document.getElementById("filter-button");
 let weaknessButton = document.getElementById("weakness-button");
@@ -35,59 +11,58 @@ let searchPokemon = document.getElementById("search-pokemon");
 
 //executar a função ao abrir a pagina para listar as opções dos botões e os cards
 onload = () => {
-  //cardDisplay(POKEMONS);
-  typeList(POKEMONS);
-  weaknessList(POKEMONS);  
+cardDisplay(POKEMONS);
+typeList(POKEMONS);
+weaknessList(POKEMONS); 
 };
 
-let cardzinho = "";
 //exibição do card
-function cardDisplay(poke) {
-  // console.log( "oi" , poke)
-
-  cardzinho += `
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="${poke.img}" />
-              <p class="nome">${poke.name}</p>
-          </div>
-          <div class="card-back">Altura: ${poke.height} mts</br>Peso: ${poke.weight} kgs</br>Tipo: ${poke.type}</br></div>
-        </div>
-      </div>`;
-  cartao.innerHTML = cardzinho;
+function cardDisplay(arr) {
+let cardzinho ="";
+arr.forEach(poke => {
+cardzinho += `
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<img src="${poke.img}" />
+<p class="nome">${poke.name}</p>
+</div>
+<div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>Candys para evolução: ${poke.candy_count ? poke.candy_count : "Ùltima Evolução"}</div>
+</div>
+</div>`;
+});
+cartao.innerHTML = cardzinho;
 }
-   
 //BOTÃO FILTRO-TIPO
 function typeList(POKEMONS) {
-  const filterTypes = []; 
-  POKEMONS.map(poke => poke.type.map(type => {
-    if (!filterTypes.includes(type)) {
-      filterTypes.push(type);
-    } else {
-      return false;
-    }   
-  }));
+const filterTypes = []; 
+POKEMONS.map(poke => poke.type.map(type => {
+if (!filterTypes.includes(type)) {
+filterTypes.push(type);
+} else {
+return false;
+} 
+}));
 
-  filterButton.innerHTML = "";
-  filterButton.innerHTML = "<option value=\"none\">Tipo</option>";
-  filterButton.innerHTML += filterTypes.map(type => `<option value="${type}">${type}</option>`).join("");
+filterButton.innerHTML = "";
+filterButton.innerHTML = "<option value=\"none\">Tipo</option>";
+filterButton.innerHTML += filterTypes.map(type => `<option value="${type}">${type}</option>`).join("");
 }
 
 //BOTÃO FILTRO-FRAQUEZA
 function weaknessList(POKEMONS) {
-  const filterWeak = []; 
-  POKEMONS.map(poke => poke.weaknesses.map(weaknesses => {
-    if (!filterWeak.includes(weaknesses)) {
-      filterWeak.push(weaknesses);
-    } else {
-      return false;
-    }   
-  }));
+const filterWeak = []; 
+POKEMONS.map(poke => poke.weaknesses.map(weaknesses => {
+if (!filterWeak.includes(weaknesses)) {
+filterWeak.push(weaknesses);
+} else {
+return false;
+} 
+}));
 
-  weaknessButton.innerHTML = "";
-  weaknessButton.innerHTML = "<option value=\"none\">Fraqueza</option>";
-  weaknessButton.innerHTML += filterWeak.map(weaknesses => `<option value="${weaknesses}">${weaknesses}</option>`).join("");
+weaknessButton.innerHTML = "";
+weaknessButton.innerHTML = "<option value=\"none\">Fraqueza</option>";
+weaknessButton.innerHTML += filterWeak.map(weaknesses => `<option value="${weaknesses}">${weaknesses}</option>`).join("");
 }
 
 //BOTÕES ORDENAR
@@ -102,37 +77,37 @@ rarityButton.addEventListener("change", raridade);
 
 //FUNÇÕES
 function filtro() {
-  cardDisplay(app.filtrar(POKEMON, filterButton.value, "type"));
-  if (filterButton.value == "none") {
-    cardDisplay(POKEMONS);
-  }
-  weaknessButton.value = "none";
-  sortButton.value = "none";
-  rarityButton.value = "none";
+cardDisplay(app.filtrar(POKEMONS, filterButton.value, "type"));
+if (filterButton.value == "none") {
+cardDisplay(POKEMONS);
+}
+weaknessButton.value = "none";
+sortButton.value = "none";
+rarityButton.value = "none";
 }
 
 function fraqueza() {
-  cardDisplay(app.filtrar(POKEMONS, weaknessButton.value, "weaknesses"));
-  if (weaknessButton.value == "none") {
-    cardDisplay(POKEMONS);
-  }
-  filterButton.value = "none";
-  sortButton.value = "none";
-  rarityButton.value = "none";
+cardDisplay(app.filtrar(POKEMONS, weaknessButton.value, "weaknesses"));
+if (weaknessButton.value == "none") {
+cardDisplay(POKEMONS);
+}
+filterButton.value = "none";
+sortButton.value = "none";
+rarityButton.value = "none";
 } 
 
 function ordem () {
-  cardDisplay(app.ordenar(POKEMONS, sortButton.value, "name"));
-  filterButton.value = "none";
-  weaknessButton.value = "none";
-  rarityButton.value = "none";
+cardDisplay(app.ordenar(POKEMONS, sortButton.value, "name"));
+filterButton.value = "none";
+weaknessButton.value = "none";
+rarityButton.value = "none";
 } 
 
 function raridade () {
-  cardDisplay(app.ordenar(POKEMONS, rarityButton.value, "spawn_chance"));
-  filterButton.value = "none";
-  weaknessButton.value = "none";
-  sortButton.value = "none";
+cardDisplay(app.ordenar(POKEMONS, rarityButton.value, "spawn_chance"));
+filterButton.value = "none";
+weaknessButton.value = "none";
+sortButton.value = "none";
 }
 
 //CALCULOS CURIOSIDADES
@@ -161,9 +136,9 @@ O mais leve deles é o ${skinnyPokemon}, com apenas ${lowerWeight} kg, enquanto 
 let pokesExtremos = [POKEMONS[(arrHeight.indexOf(lowerHeight))], POKEMONS[(arrHeight.indexOf(higherPokemon))], POKEMONS[(arrWeight.indexOf(lowerWeight))], POKEMONS[(arrWeight.indexOf(greaterWeight))]];
 const extremos = () => (cardDisplay(pokesExtremos));
 const todos = () => {
-  (cardDisplay(POKEMONS));
-  filterButton.value = "none"; 
-  weaknessButton.value = "none";
+(cardDisplay(POKEMONS));
+filterButton.value = "none"; 
+weaknessButton.value = "none";
 };
 
 seeButton.addEventListener("click", extremos);
@@ -171,9 +146,10 @@ seeAllButton.addEventListener("click", todos);
 
 // Barra de busca
 searchPokemon.addEventListener("keyup", () => {
-  cardDisplay(app.filtrar(POKEMONS, searchPokemon.value, "name"));
-  filterButton.value = "none";
-  weaknessButton.value = "none";
-  sortButton.value = "none";
-  rarityButton.value = "none";
+cardDisplay(app.filtrar(POKEMONS, searchPokemon.value, "name"));
+filterButton.value = "none";
+weaknessButton.value = "none";
+sortButton.value = "none";
+rarityButton.value = "none";
 });
+
