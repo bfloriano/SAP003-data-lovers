@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>PokeWorld</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>PokeWorld</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-<div id="root"></div>
-<div class="container">
-<header>
-<img src="imagens/pokebolla.gif" class="gif-pokeball">
-<img src="imagens/pokeworld.png" class="logo" srcset="">
-<img src="imagens/tenor.gif" class="gif-pikachu">
-<h2>O seu guia pokémons</h2>
-</header>
+  <!-- <div id="root"></div> -->
+  <div class="container">
+    <header>
+      <img src="imagens/pokebolla.gif" class="gif-pokeball">
+      <img src="imagens/pokeworld.png" class="logo" srcset="">
+      <img src="imagens/tenor.gif" class="gif-pikachu">
+      <h2>O seu guia pokémons</h2>
+    </header>
 
-<main>
+    <main>
+      <section class="buttons">
+        <select name="filter-button" id="filter-button"></select>
+        <select name="weakness-button" id="weakness-button"></select>
+        <select name="sort-button" id="sort-button"></select>
+        <select name="rarity-button" id="rarity-button"></select>
+        <input type="text" id="search-pokemon" placeholder=" Digite o nome para buscar">
+      </section>
 
-<section class="botons">
-<select name="filter-button" id="filter-button"></select>
-<select name="weakness-button" id="weakness-button"></select>
-<select name="sort-button" id="sort-button"></select>
-<select name="rarity-button" id="rarity-button"></select>
-<input type="text" id="search-pokemon" placeholder=" Digite o nome para buscar">
-</section>
+      <section>
+        <div id="cartao"></div>
+      </section>
 
-<section>
-<div id="cartao"></div>
-</section>
-<aside>Curiosidades</br>
-<div id="medias"></div>
-<div id="botons-aside">
-<button id="see-button">vê-los</button>
-<button id="see-all-button">ver todos</button>
-</div>
-</aside>
-</main>
-<footer>
-© By Campos & Floriano - 2019
-</footer>
+      <aside>
+        Curiosidades:
+        <div class="aside">
+          <div id="medias"></div>
+          <div id="buttons-aside">
+            <button id="see-button">vê-los</button>
+            <button id="see-all-button">ver todos</button>
+          </div>
+        </div>
+      </aside>
+    </main>
 
-<script src="data/pokemon/pokemon.js"></script>
+    <footer>
+      © By Campos & Floriano - 2019
+    </footer>
 
-<script src="data.js"></script>
-<script src="main.js"></script>
-</div>
+    <script src="data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </div>
 </body>
 
 </html>
