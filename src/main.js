@@ -9,15 +9,13 @@ let seeButton = document.getElementById("see-button");
 let seeAllButton = document.getElementById("see-all-button");
 let searchPokemon = document.getElementById("search-pokemon");
 
-//executar a função ao abrir a pagina para listar as opções dos botões e os cards
 onload = () => {
   cardDisplay(POKEMONS);
   typeList(POKEMONS);
   weaknessList(POKEMONS);
 };
 
-//exibição do card
-function cardDisplay(arr) {
+const cardDisplay = (arr) => {
   let cardzinho = "";
   arr.forEach(poke => {
     cardzinho += `
@@ -33,8 +31,8 @@ function cardDisplay(arr) {
       </div>`;
   });
   cartao.innerHTML = cardzinho;
-}
-//BOTÃO FILTRO-TIPO
+};
+
 function typeList(POKEMONS) {
   const filterTypes = [];
   POKEMONS.map(poke => poke.type.map(type => {
@@ -50,7 +48,6 @@ function typeList(POKEMONS) {
   filterButton.innerHTML += filterTypes.map(type => `<option value="${type}">${type}</option>`).join("");
 }
 
-//BOTÃO FILTRO-FRAQUEZA
 function weaknessList(POKEMONS) {
   const filterWeak = [];
   POKEMONS.map(poke => poke.weaknesses.map(weaknesses => {
@@ -66,17 +63,14 @@ function weaknessList(POKEMONS) {
   weaknessButton.innerHTML += filterWeak.map(weaknesses => `<option value="${weaknesses}">${weaknesses}</option>`).join("");
 }
 
-//BOTÕES ORDENAR
 sortButton.innerHTML = "<option value=\"none\">Nome</option> <option value=\"A - Z\">A - Z</option> <option value=\"Z - A\"> Z - A</option>";
 rarityButton.innerHTML = "<option value=\"none\">Raridade</option> <option value=\"maisRaros\">Raros</option> <option value=\"menosRaros\">Comuns</option>";
 
-//Evento dos botões
 filterButton.addEventListener("change", filtro);
 weaknessButton.addEventListener("change", fraqueza);
 sortButton.addEventListener("change", ordem);
 rarityButton.addEventListener("change", raridade);
 
-//FUNÇÕES
 function filtro() {
   cardDisplay(app.filtrar(POKEMONS, filterButton.value, "type"));
   if (filterButton.value == "none") {

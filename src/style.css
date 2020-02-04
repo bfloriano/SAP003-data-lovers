@@ -4,7 +4,6 @@
   border: 0;
 }
 body {
-/* background-color: rgb(18, 27, 27); */
 background-image: url("imagens/teste14.jpg"); 
 background-size: cover;
 background-repeat: no-repeat;
@@ -71,6 +70,7 @@ footer {
 
 #cartao {
   text-align: center;
+  /* width: 80%; */
 }
 
 aside {
@@ -82,6 +82,11 @@ aside {
   padding: 15px;
   margin: 2% 0%;
   background-color: rgba(117, 172, 250, 0.651);
+  /* position: fixed;
+  right: 0;
+  top: 60%;
+  height: 400px;
+  width: 20%; */
 }
 
 #medias {
