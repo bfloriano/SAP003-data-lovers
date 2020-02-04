@@ -24,7 +24,7 @@ function cardDisplay(arr) {
       <div class="card">
       <div class="card-inner">
       <div class="card-front">
-      <img src="${poke.img}" />
+      <img src="${poke.img}"/>
       <p class="nome">${poke.name}</p>
       </div>
       <div class="card-back">Altura: ${poke.height}</br>Peso: ${poke.weight}</br>
@@ -145,12 +145,10 @@ const todos = () => {
 seeButton.addEventListener("click", extremos);
 seeAllButton.addEventListener("click", todos);
 
-// Barra de busca
 searchPokemon.addEventListener("keyup", () => {
-  cardDisplay(app.filtrar(POKEMONS, searchPokemon.value, "name"));
+  cardDisplay(app.filtrar(POKEMONS, searchPokemon.value.charAt(0).toUpperCase() + searchPokemon.value.slice(1), "name"));
   filterButton.value = "none";
   weaknessButton.value = "none";
   sortButton.value = "none";
   rarityButton.value = "none";
 });
-
